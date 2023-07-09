@@ -1,5 +1,8 @@
--- Small Changes ------------------------------------------------------
-o  Do fallback to default interface already in ip guessing phase
+TODO List - Honeytrap Improvement Ideas
 
--- Future plans -------------------------------------------------------
-o  add ipfw connection monitors
+1. Update and maintain the codebase to ensure compatibility with the latest software versions and resolve obsolete functionalities causing errors (e.g., NFQ and IPQ listening modes).
+2. Enhance the htm_dnsDetection module to enable the detection of DNS responses in intercepted network packets, improving the understanding of intercepted DNS communication within network traffic.
+3. Expand functionality by incorporating modules for the STMP and MySQL protocols, as their associated ports are currently ignored in the configuration file.
+4. Improve the codebase for SSH, SFTP, and SCP protocols to enhance their functionality within the application.
+5. Implement a more efficient handling mechanism for incoming events when receiving TCP connections and packets within the same connection. This modification is crucial for the proper functioning of the application.
+Please note that this is a TODO list outlining proposed improvements and additions to the open-source Honeytrap application.

@@ -100,20 +100,39 @@ void plugin_register_confopts(void) {
 	return;
 }
 
-int is_dns_query(char* packet){
+/**
+
+This function checks whether a given packet is a valid DNS query or response.
+
+It first checks if the packet has the minimum size required to be a valid DNS packet.
+
+Then it checks the value of the query/response bit to determine if it's a query or a response.
+
+@param packet A pointer to the packet data.
+
+@return -1 if the packet size is invalid, 1 if it's a query, 0 if it's a response.
+*/
+/*
+int is_dns_query(char packet){
 	//Check if the packet has the minimum size to be a valid DNS packet
 	if(packet[2] < 0x01 || packet[2] > 0xff || packet[3] < 0x01 || packet[3] > 0xff){
 		return -1;
 	}
+	
+	// Extract the length of the question section from the packet
+    int questionLength = (packet[2] << 8) | packet[3];
 
-	//Check the value of the query/response bit
-	if((packet[2] & 0x80) == 0x00){
-		return 1; //It's a query
-	}
-	else{
-		return 0; //It's a response
-	}
+    // Check if the packet size is at least equal to the length of the question section
+    if (questionLength > 0 && questionLength <= (packetSize - HEADER_SIZE)) {
+        // Check the value of the query/response bit
+        if ((packet[2] & 0x80) == 0x00) {
+            return 1; // It's a query
+        } else {
+            return 0; // It's a response
+        }
+    }
 }
+*/
 
 
 
